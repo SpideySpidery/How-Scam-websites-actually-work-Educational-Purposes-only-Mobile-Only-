@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>How Scam websites actually work (Educational Purposes only) (Mobile Only)</title>
+    <script src="https://cdn.jsdelivr.net/npm/share.js@latest/dist/share.min.js"></script>
 </head>
 <body>
     <div class="main">
         <h3>Share with your friends to win the reward!</h3>
-        <a href="#" id="whatsapp-share-button" target="_blank" >Share : 0/20</a>
-        <h5 id="scammed"></h5>
+        <h3 id="count">You Shared to No People</h3>
+        <div class="share">
+            <h5 id="scammed"></h5>
+            <button class="share-btn" data-share="whatsapp" data-title="Share on WhatsApp" data-url="https://spideyspidery.github.io/How-Scam-websites-actually-work-Educational-Purposes-only-Mobile-Only-/"></button>
+        </div>
     </div>
-        <style>
+    <script>
+        var count = 0;
+        var btn = document.querySelector('.share-btn');
+        var countTag = document.getElementById("count");
+        btn.addEventListener('click', function() {
+            count++;
+            countTag.innerHTML = "You Shared to " + count + " People";
+            if(count == 20) {
+                document.getElementById("scammed").innerHTML = "Scammed Loser!";
+                btn.style.display = "none";
+            }
+        });
+    </script>
+    <style>
         /* CSS for button */
         .main {
           margin: 100px auto;
@@ -27,19 +44,5 @@
             color: lightblue;
         }
     </style>
-    <script>
-        var button = document.getElementById("whatsapp-share-button"),
-        count = 0;
-        button.onclick = function() {
-            count += 1;
-            button.innerHTML = "Share : " + count + "/20";
-            if (count == 20) {
-                document.getElementById("scammed").innerHTML="Scammed Loser!";
-                button.style.display = "none";
-            }
-            var message = "Check out this website! https://www.example.com";
-            button.href = `https://api.whatsapp.com/send?text=${message}`
-        };
-    </script>
 </body>
 </html>
