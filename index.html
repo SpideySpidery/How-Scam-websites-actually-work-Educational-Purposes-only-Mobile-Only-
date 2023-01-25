@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>How Scam websites actually work (Educational Purposes only) (Mobile Only)</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
 <html>
-
 <head>
-  <meta charset="UTF-8">
-  <title></title>
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>How Scam websites actually work (Educational Purposes only) (Mobile Only)</title>
 </head>
-
 <body>
-  <div class="main">
-
-    <h3 id="share" >Share with your friends to win the reward!</h3>
-    <button href="https://api.whatsapp.com/send?text=Check out this website! https://spideyspidery.github.io/How-Scam-websites-actually-work-Educational-Purposes-only-Mobile-Only-/"  id="clickme">Share : 0/20</button>
-    <h5 id="scammed"></h5>
-  </div>
-</body>
-
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+    <div class="main">
+        <h3>Share with your friends to win the reward!</h3>
+        <a href="#" id="whatsapp-share-button" target="_blank" >Share : 0/20</a>
+        <h5 id="scammed"></h5>
+    </div>
+    <script>
+        var button = document.getElementById("whatsapp-share-button"),
+        count = 0;
+        button.onclick = function() {
+            count += 1;
+            button.innerHTML = "Share : " + count + "/20";
+            if (count == 20) {
+                document.getElementById("scammed").innerHTML="Scammed Loser!";
+                button.style.display = "none";
+            }
+            var message = "Check out this website! https://www.example.com";
+            button.href = `https://api.whatsapp.com/send?text=${message}`
+        };
+    </script>
 </body>
 </html>
