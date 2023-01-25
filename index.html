@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="main">
-        <h3>Share with your friends to win the reward!</h3>
+        <h3 id ="gg" >Share with 20 of your friends to win the reward!</h3>
         <h3 id="count">You Shared to No People</h3>
         <div class="share">
             </br>
@@ -24,6 +24,7 @@
             countTag.innerHTML = "You Shared to " + count + " People";
             if(count == 20) {
                 document.getElementById("scammed").innerHTML = "Scammed Loser!";
+                document.getElementById("gg").innerHTML = "You got Scammed Dummy!";
                 btn.style.display = "none";
             }
         });
